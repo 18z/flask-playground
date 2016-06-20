@@ -4,6 +4,40 @@
 
 {% block page_content %}
 <h1>Hello World！</h1>
+<h1> {{c1}}  {{c2}}</h1>
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>URL</th>
+        <th>Unknown</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+    {% for i in range(15) %}
+      {# {% for j in range(10) %} #}
+      <tr class="success">
+          {# {% for i in range(10) %} #}
+          <td>{{ttal[0][i]}}</td>
+          <td>{{ttal[1][i]}}</td>
+          <td>{{ttal[2][i]}}</td>
+          {# {% endfor %} #}
+      </tr>
+      {# {% endfor %} #}
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+
+
+
 
 <p>
   <button type="button" class="btn btn-primary btn-lg">Large button</button>
@@ -21,6 +55,11 @@
   <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
   <button type="button" class="btn btn-default btn-xs">Extra small button</button>
 </p>
+
+
+
+
+
 
 <!-- 標準按鈕 -->
 <button type="button" class="btn btn-default">Default</button>
@@ -43,13 +82,4 @@
 <!-- 淡化一個按鈕，使它看起來像是一個連結並同時保持按鈕行為 -->
 <button type="button" class="btn btn-link">Link</button>
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Panel heading</div>
-
-  <!-- Table -->
-  <table class="table">
-    ...
-  </table>
-</div>
 {% endblock %}
