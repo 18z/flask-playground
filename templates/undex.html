@@ -1,0 +1,31 @@
+{% extends "test.html" %}
+
+{% block title %}首頁{% endblock %}
+
+{% block page_content %}
+<h1>Hello World！</h1>
+<h1> {{c1}}  {{c2}}</h1>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+    {% for r in rds %}
+      <tr class="success">
+          <td>{{r.datee}}</td>
+          <td>{{r.url}}</td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
