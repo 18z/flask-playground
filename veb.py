@@ -36,10 +36,7 @@ def hello_world():
     for row in rows:
         cells = row.findAll('td')
         if len(cells) > 5:
-            # print cells[0].string
             datee = cells[0].string
-
-            # print cells[1].string
             url = cells[1].string
 
             # print cells[2].a.string
@@ -50,9 +47,6 @@ def hello_world():
 
             data = record(datee, url)
             records.append(data)
-
-            # for r in records:
-            # print r.datee
 
     return render_template('undex.html', rds=records)
 
