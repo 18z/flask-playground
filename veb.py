@@ -1,11 +1,14 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from flask_frozen import Freezer
 
+import sys
 import urllib
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 Bootstrap(app)
+freezer = Freezer(app)
 
 
 class record(object):
@@ -55,4 +58,8 @@ def hello_world():
 
 
 if "__main__" == __name__:
-    app.run(host='127.0.0.1', port=5000)
+
+    if len(sys.argv) > 1 and sys.argv[1] == "build":
+        freezer.freeze()
+    else:
+        app.run(host='127.0.0.1', port=5000)
